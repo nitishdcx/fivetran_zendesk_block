@@ -188,7 +188,7 @@ view: ticket {
     type: number
     sql: 1.00 * DATEDIFF(minute, ${created_raw}, ${ticket_history_facts.first_response_raw}) ;;
   }
-  
+
   dimension: hours_to_solve {
     type: number
     sql: 1.00 * DATEDIFF(hour, ${created_raw}, ${ticket_history_facts.solved_raw}) ;;
@@ -467,7 +467,7 @@ view: assignee {
   # ----- agent comparison fields -----
   filter: agent_select {
     view_label: "Agent Comparisons"
-    suggest_dimension: user.name
+    suggest_dimension: user."name"
   }
 
   dimension: agent_comparitor {
